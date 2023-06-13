@@ -1,0 +1,37 @@
+Compiling 21 files with 0.8.19
+Solc 0.8.19 finished in 1.68s
+Compiler run successful
+Analysing contracts...
+Running tests...
+Uncovered for script/Counter.s.sol:
+- Function "setUp" (location: source ID 18, line 7, chars 136-162, hits: 0)
+- Function "run" (location: source ID 18, line 9, chars 168-221, hits: 0)
+- Line (location: source ID 18, line 10, chars 200-214, hits: 0)
+- Statement (location: source ID 18, line 10, chars 200-214, hits: 0)
+
+Uncovered for src/Counter.sol:
+
+Anchors for Contract "CounterScript" (solc 0.8.19+commit.7dd6d404.Darwin.appleclang, source ID 18):
+- IC 70 -> Item 6
+  - Refers to item: Function "setUp" (location: source ID 18, line 7, chars 136-162, hits: 0)
+- IC 80 -> Item 7
+  - Refers to item: Function "run" (location: source ID 18, line 9, chars 168-221, hits: 0)
+- IC 159 -> Item 8
+  - Refers to item: Line (location: source ID 18, line 10, chars 200-214, hits: 0)
+- IC 159 -> Item 9
+  - Refers to item: Statement (location: source ID 18, line 10, chars 200-214, hits: 0)
+
+Anchors for Contract "Counter" (solc 0.8.19+commit.7dd6d404.Darwin.appleclang, source ID 19):
+- IC 70 -> Item 0
+  - Refers to item: Function "setNumber" (location: source ID 19, line 7, chars 116-196, hits: 256)
+- IC 139 -> Item 1
+  - Refers to item: Line (location: source ID 19, line 8, chars 171-189, hits: 256)
+- IC 139 -> Item 2
+  - Refers to item: Statement (location: source ID 19, line 8, chars 171-189, hits: 256)
+- IC 128 -> Item 3
+  - Refers to item: Function "increment" (location: source ID 19, line 11, chars 202-255, hits: 1)
+- IC 155 -> Item 4
+  - Refers to item: Line (location: source ID 19, line 12, chars 240-248, hits: 1)
+- IC 155 -> Item 5
+  - Refers to item: Statement (location: source ID 19, line 12, chars 240-248, hits: 1)
+
