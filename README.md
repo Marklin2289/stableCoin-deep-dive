@@ -37,4 +37,7 @@
    ```bash
    source .env
    ```
-3.
+3. install dependencies on foundry:
+   ```bash
+   forge install --no-commit smartcontractkit/chainlink-brownie-contracts openzeppelin/openzeppelin-contracts@v4.8.3
+   ```
