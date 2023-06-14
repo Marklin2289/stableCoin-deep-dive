@@ -41,3 +41,10 @@
    ```bash
    forge install --no-commit smartcontractkit/chainlink-brownie-contracts openzeppelin/openzeppelin-contracts@v4.8.3
    ```
+   /foundry.toml
+   ```
+   remappings = ['@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/', '@openzeppelin/contracts=lib/openzeppelin-contracts/contracts']
+   ```
+4. create smart contracts:
+   - DecentralizedStableCoin.sol
+   - DSCEngine.sol
