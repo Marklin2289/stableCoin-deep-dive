@@ -1,4 +1,4 @@
-# Stable Coin Deep Dive:
+# StableCoin Deep Dive:
 
 - Using Foudary
 
@@ -46,5 +46,7 @@
    remappings = ['@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/', '@openzeppelin/contracts=lib/openzeppelin-contracts/contracts']
    ```
 4. create smart contracts:
-   - DecentralizedStableCoin.sol
-   - DSCEngine.sol
+   - /src
+   * /libraries/OracleLib.sol
+   * DecentralizedStableCoin.sol
+   * DSCEngine.sol
