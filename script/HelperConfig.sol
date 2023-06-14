@@ -19,9 +19,9 @@ contract HelperConfig is Script {
 
     // base on chainlink oracle, decimals = 8;
     uint8 public constant DECIMAILS = 8;
-    // manually set price for ETH and WBTC
+    // manually set price for ETH and BTC
     int256 public constant ETH_USD_PRICE = 2000e8;
-    int256 public constant WBTC_USD_PRICE = 10000e8;
+    int256 public constant BTC_USD_PRICE = 10000e8;
 
     // in terminal, anvil then get a random private key
     uint256 public DEFAULT_ANVIL_PRIVATE_KEY = 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80;
@@ -54,7 +54,7 @@ contract HelperConfig is Script {
         // act like beforeEach in typescript which do minting and setup priceFeeds
         vm.startBroadcast();
         MockV3Aggregator ethUsdPriceFeed = new MockV3Aggregator(DECIMAILS, ETH_USD_PRICE);
-        MockV3Aggregator wbtcUsdPriceFeed = new MockV3Aggregator(DECIMAILS, WBTC_USD_PRICE);
+        MockV3Aggregator wbtcUsdPriceFeed = new MockV3Aggregator(DECIMAILS, BTC_USD_PRICE);
         ERC20Mock weth = new ERC20Mock("WETH", "WETH", msg.sender, 1000e8);
         ERC20Mock wbtc = new ERC20Mock("WBTC", "WBTC", msg.sender, 1000e8);
         vm.stopBroadcast();

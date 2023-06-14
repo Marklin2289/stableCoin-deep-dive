@@ -7,8 +7,27 @@ import {DSCEngine} from "../src/DSCEngine.sol";
 import {HelperConfig} from "./HelperConfig.sol";
 
 contract DeployDSC is Script {
+    // state variables
     address[] public tokenAddresses;
     address[] public priceFeedAddresses;
 
-    function run() external returns (DecentralizedStableCoin, DSCEngine, HelperConfig) {}
+    function run() external returns (DecentralizedStableCoin, DSCEngine, HelperConfig) {
+        // for helperConfig , if it is testnet, it goes to sepolia config,
+        // otherwise, it goes to anvil config which using mocks contracts
+        HelperConfig helperConfig = new HelperConfig();
+
+        (address wethUsdPriceFeed, address wbtcUsdPriceFeed, address weth, address wbtc, uint256 deployerKey) =
+            helperConfig.activeNetworkConfig();
+        tokenAddresses = [weth, wbtc];
+        priceFeedAddresses = [wethUsdPriceFeed, wbtcUsdPriceFeed];
+
+        vm.startBroadcast();
+        DecentralizedStableCoin dsc = new DecentralizedStableCoin();
+        DSCEngine dscEngine = new DSCEngine(
+            tokenAddresses,priceFeedAddresses,address(dsc)
+        );
+        dsc.transferOwnership(address(dscEngine)); // from Ownable.sol
+        vm.stopBroadcast();
+        return (dsc, dscEngine, helperConfig);
+    }
 }

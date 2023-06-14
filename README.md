@@ -47,6 +47,7 @@
    ```
 4. create smart contracts:
    - /src
-   * /libraries/OracleLib.sol
-   * DecentralizedStableCoin.sol
-   * DSCEngine.sol
+     - /libraries
+       - OracleLib.sol
+     - DecentralizedStableCoin.sol
+     - DSCEngine.sol
