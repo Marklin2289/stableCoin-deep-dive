@@ -46,6 +46,9 @@
    remappings = ['@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/', '@openzeppelin/contracts=lib/openzeppelin-contracts/contracts']
    ```
 4. create smart contracts:
+   - /script
+     - DeployDSC.s.sol
+     - HelperConfig.s.sol
    - /src
      - /libraries
        - OracleLib.sol
